@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ChampionListFragment">
+
+    <fragment
+        android:id="@+id/ChampionListFragment"
+        android:name="com.example.firstapplication3aufacourses2.presentation.list.ChampionListFragment"
+        android:label="First Fragment"
+        tools:layout="@layout/fragment_champion_list">
+
+        <action
+            android:id="@+id/navigatetoChampionDetailFragment"
+            app:destination="@id/ChampionDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ChampionDetailFragment"
+        android:name="com.example.firstapplication3aufacourses2.presentation.Detail.ChampionDetailFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_champion_detail">
+        <argument
+            android:name="championId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <action
+            android:id="@+id/navigatetoChampionListFragment"
+            app:destination="@id/ChampionListFragment" />
+    </fragment>
+</navigation>
